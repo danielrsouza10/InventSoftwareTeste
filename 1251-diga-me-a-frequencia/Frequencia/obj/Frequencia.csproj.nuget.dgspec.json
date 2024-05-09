@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ususario\\Documents\\repos\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj": {}
+    "C:\\Users\\Ususario\\Documents\\repos\\InventSoftwareTeste\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ususario\\Documents\\repos\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj": {
+    "C:\\Users\\Ususario\\Documents\\repos\\InventSoftwareTeste\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ususario\\Documents\\repos\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj",
+        "projectUniqueName": "C:\\Users\\Ususario\\Documents\\repos\\InventSoftwareTeste\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj",
         "projectName": "Frequencia",
-        "projectPath": "C:\\Users\\Ususario\\Documents\\repos\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj",
+        "projectPath": "C:\\Users\\Ususario\\Documents\\repos\\InventSoftwareTeste\\1251-diga-me-a-frequencia\\Frequencia\\Frequencia.csproj",
         "packagesPath": "C:\\Users\\Ususario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ususario\\Documents\\repos\\1251-diga-me-a-frequencia\\Frequencia\\obj\\",
+        "outputPath": "C:\\Users\\Ususario\\Documents\\repos\\InventSoftwareTeste\\1251-diga-me-a-frequencia\\Frequencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ususario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
