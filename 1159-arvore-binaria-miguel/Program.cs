@@ -4,21 +4,19 @@
             List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
 
             int quantidadeTeste = int.Parse(Console.ReadLine());
-            
-            
 
             int contador = 1;
             int x, y, z;
             foreach (ArvoreBinaria arvore in floresta) {
-                Console.WriteLine($"Case {contador}:");
-                Console.Write("Pre.: ");
-                arvore.ImprimirPreOrdem(arvore.Raiz);
-                x = 5;
-                y = 2;
-                z = 1;
-                arvore.ImprimirPosOrdem(arvore.Raiz);
-                Console.WriteLine("\n");
-                contador++;
+                arvore = 2;
+                else if(entrada == "-*-")
+                {
+                    total[i] += 2;
+                }
+                else if(entrada == "-**")
+                {
+                    total[i] += 3;
+                }
             }
         }
     }
@@ -112,8 +110,3 @@
     }
 
 }
-
-
-
-
-
