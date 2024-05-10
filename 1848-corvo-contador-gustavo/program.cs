@@ -27,7 +27,13 @@ class URI {
                 
                 entrada = Console.ReadLine();
                 
-                
+                if(entrada == "caw caw")
+                {
+                    break;
+                } 
+                else if(entrada == "-*-")
+                {
+                    total[i] += 2;
                 }
                 else if(entrada == "-**")
                 {
@@ -40,7 +46,6 @@ class URI {
                 else if(entrada == "*-*")
                 {
                     total[i] += 5;
-                      total[i]++;
                 }
                 else if(entrada == "***")
                 {
