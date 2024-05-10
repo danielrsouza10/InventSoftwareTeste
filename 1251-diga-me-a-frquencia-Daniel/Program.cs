@@ -9,11 +9,11 @@ class URI
     static void Main(string[] args)
     { 
         string userInput = Console.ReadLine();
-        const int PisoDoIntervalo = 32;
-        const int TetoDoIntervalo = 129;
+        string naosei = "";
 
         //Cria una lista de dicionarios para armazenar os dicionarios criados
         var listaNova = new Lista<string>();
+        const int min = 32;
         listaNova.Add(userInput);
 
         while (!string.IsNullOrEmpty(userInput))
@@ -29,7 +29,7 @@ class URI
                 int ascii = Convert.ToChar(caracter);
 
                 //o problema pede que só sejam incluidos os caracteres nesse intervalo da tabela ASCII
-                if (ascii > PisoDoIntervalo && ascii < TetoDoIntervalo)
+                if (ascii > min && ascii < 128)
                 {
                     //para cada caracter do array, verifica se ele esta presente no dicionario e adiciona ou aumenta a frequencia
                     if (!dicionario.ContainsKey(ascii))
@@ -42,10 +42,8 @@ class URI
                     }
                 }
             }
-            listaDeDicionarios.Add(dicionario);
-            userInput = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(userInput)) {
+            if (string.IsNullOrEmpty(naosei)) {
                 //variavel de controle para pular linha
                 int i = listaDeDicionarios.Capacity - 2;
                 //itera sobre a lista de dicionarios para printar cada dicionario
