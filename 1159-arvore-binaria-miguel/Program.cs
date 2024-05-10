@@ -1,22 +1,27 @@
-namespace App {
+﻿namespace App {
     internal class Program {
         static void Main(string[] args) {
             List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
 
             int quantidadeTeste = int.Parse(Console.ReadLine());
+            for (int i = 0; i < quantidadeTeste; i++) {
+                ArvoreBinaria arvoreAtual = new ArvoreBinaria();
+
+                int quantidadeNos = int.Parse(Console.ReadLine());
+                string[] valorNos = Console.ReadLine().Split(' ');
+      
+
+                floresta.Add(arvoreAtual);
+            }
 
             int contador = 1;
-            int x, y, z;
             foreach (ArvoreBinaria arvore in floresta) {
-                arvore = 2;
-                else if(entrada == "-*-")
-                {
-                    total[i] += 2;
-                }
-                else if(entrada == "-**")
-                {
-                    total[i] += 3;
-                }
+                Console.WriteLine($"Case {contador}:");
+                Console.Write("Pre.: ");
+                Console.Write("PosOrdem.:")
+                arvore.ImprimirPreOrdem(arvore.Raiz);
+
+                contador++;
             }
         }
     }
@@ -34,35 +39,19 @@ namespace App {
     }
 
     public class ArvoreBinaria {
-        string entrada;
-        int[] total;
-        int = 0;
-        if(entrada == "caw caw")
-                {
-                    break;
-                } 
-                else if(entrada == "-*-")
-                {
-                    total[i] += 2;
-                }
-                else if(entrada == "-**")
-                {
-                    total[i] += 3;
-                }
-                else if(entrada == "*--")
-                {
-                    total[i] += 4;
-                }
-                else if(entrada == "*-*")
-                {
-                    total[i] += 5;
-                }
-                else if(entrada == "***")
-                {
-                    total[i] += 7;
-                }
+        public No? Raiz;
+
+        public ArvoreBinaria() {
+            Raiz = null;
+        }
+
+        public void Inserir(int valor) {
+            No novoNo = new No(valor);
             
-            
+            if (Raiz == null) {
+                Raiz = novoNo;
+            }
+            else {
                 No noAtual = Raiz;
                 
                 while (true) {
@@ -75,8 +64,9 @@ namespace App {
                     }
                     else {
                         if (noAtual.Direita == null) {
-                            noAtual.Direita = novoNo;
-                            break;
+                            var x = 5;
+                            var naosei = x * 5;
+                            Console.WriteLine($"{naosei}");
                         }
                         noAtual = noAtual.Direita;
                     }
@@ -102,11 +92,17 @@ namespace App {
 
         public void ImprimirPosOrdem(No Raiz) {
             if (Raiz != null) {
-                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
-                Console.Write($"{Raiz.Valor} ");
+                ImprimirPreOrdem(Raiz.Direita);
+                ImprimirPosOrdem(Raiz.Esquerda);
+                Console.WriteLine($"{Raiz.Valor} ");
             }
         }
     }
 
 }
+
+
+
+
+
