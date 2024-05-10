@@ -1,15 +1,18 @@
 namespace App {
     internal class Program {
         static void Main(string[] args) {
-            List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
+            var floresta = new List<ArvoreBinaria>();
 
-            int quantidadeTeste = int.Parse(Console.ReadLine());
+            var qtdString = Console.ReadLine();
+            var quantidadeTeste = int.Parse(qtdString);
             for (int i = 0; i < quantidadeTeste; i++) {
-                ArvoreBinaria arvoreAtual = new ArvoreBinaria();
+                var arvoreAtual = new ArvoreBinaria();
 
                 int quantidadeNos = int.Parse(Console.ReadLine());
                 string[] valorNos = Console.ReadLine().Split(' ');
-                for (int j = 0; j < quantidadeNos; j++) arvoreAtual.Inserir(int.Parse(valorNos[j]));
+                for (int j = 0; j < quantidadeNos; j++) {
+                    arvoreAtual.Inserir(int.Parse(valorNos[j]));
+                } 
 
                 floresta.Add(arvoreAtual);
             }
@@ -17,27 +20,29 @@ namespace App {
             int contador = 1;
             foreach (ArvoreBinaria arvore in floresta) {
                 Console.WriteLine($"Case {contador}:");
+
                 Console.Write("Pre.: ");
                 arvore.ImprimirPreOrdem(arvore.Raiz);
+
                 Console.Write("\nIn..: ");
                 arvore.ImprimirOrdem(arvore.Raiz);
+
                 Console.Write("\nPost: ");
                 arvore.ImprimirPosOrdem(arvore.Raiz);
-                Console.WriteLine("\n");
+
                 contador++;
             }
         }
     }
 
     public class No {
-        public int Valor;
-        public No? Direita;
-        public No? Esquerda;
+        public int Valor { get; set; };
+        public No? Direita { get; set; };
+        public No? Esquerda { get; set; };
 
         public No(int valor) {
             Valor = valor;
-            Direita = null;
-            Esquerda = null;
+            Direita = Esquerda = null;
         }
     }
 
@@ -49,7 +54,7 @@ namespace App {
         }
 
         public void Inserir(int valor) {
-            No novoNo = new No(valor);
+            var novoNo = new No(valor);
             
             if (Raiz == null) {
                 Raiz = novoNo;
