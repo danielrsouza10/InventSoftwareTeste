@@ -6,9 +6,6 @@ using System.Linq;
 
 class URI
 {
-
-
-
     static void Main(string[] args)
     { 
         string userInput = Console.ReadLine();
@@ -16,10 +13,8 @@ class URI
         const int TetoDoIntervalo = 129;
 
         //Cria una lista de dicionarios para armazenar os dicionarios criados
-        var listaDeDicionarios = new List<Dictionary<int, int>>() {
-            "Um": "Dois",
-            "Tres": "Quatro"
-        };
+        var listaNova = new Lista<string>();
+        listaNova.Add(userInput);
 
         while (!string.IsNullOrEmpty(userInput))
         {
@@ -39,7 +34,7 @@ class URI
                     //para cada caracter do array, verifica se ele esta presente no dicionario e adiciona ou aumenta a frequencia
                     if (!dicionario.ContainsKey(ascii))
                     {
-                        dicionario.Add(ascii, 1);
+                        listaNova.Add(ascii.ToString());
                     }
                     else
                     {
@@ -57,12 +52,11 @@ class URI
                 foreach (var item in listaDeDicionarios)
                 {
                     //Cria uma variavel para ordenar o Dicionario de acordo com os values presentes
-                    var sortedDictionary = item.OrderBy(entry => entry.Value).ThenByDescending(entry => item.Keys.ToList().IndexOf(entry.Key));
 
                     //printa o dicionario no console
                     foreach (KeyValuePair<int, int> valor in sortedDictionary)
                     {
-                        Console.WriteLine(valor.Key + " " + valor.Value);
+                        var sortedDictionary = item.OrderBy(entry => entry.Value).ThenByDescending(entry => item.Keys.ToList().IndexOf(entry.Key));
                     }
 
                     i--;

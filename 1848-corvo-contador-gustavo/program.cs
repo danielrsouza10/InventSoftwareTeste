@@ -4,15 +4,26 @@ class URI {
 
       static void Main(string[] args) {
         int i = 0;
+        string entrada = "";
         int[] total = new int[3];
         
-        string entrada = "";
+        entrada = "";
        
         for(i=0;i<=2;i++){
             total[i] = 0;
             entrada = "";
             
-            while (entrada != "caw caw"){
+           logicaDoCawCaw(entrada, total, i);
+            
+        } 
+        for(i=0;i<=2;i++)
+        {
+            Console.Write("{0}\n",total[i]);
+        }    
+    }    
+
+    public static void logicaDoCawCaw(string entrada, int[] total, int i) {
+        while (entrada != "caw caw"){
                 
                 entrada = Console.ReadLine();
                 
@@ -20,10 +31,6 @@ class URI {
                 {
                     break;
                 } 
-                else if(entrada == "--*")
-                {
-                    total[i] += 1;
-                }
                 else if(entrada == "-*-")
                 {
                     total[i] += 2;
@@ -40,21 +47,11 @@ class URI {
                 {
                     total[i] += 5;
                 }
-                else if(entrada == "**-")
-                {
-                    total[i] += 6;
-                }
                 else if(entrada == "***")
                 {
                     total[i] += 7;
                 }
             
             }
-            
-        } 
-        for(i=0;i<=2;i++)
-        {
-            Console.WriteLine("{0}",total[i]);
-        }    
-    }    
+    }
 }

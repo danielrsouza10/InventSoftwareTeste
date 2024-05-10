@@ -9,7 +9,7 @@
 
                 int quantidadeNos = int.Parse(Console.ReadLine());
                 string[] valorNos = Console.ReadLine().Split(' ');
-                for (int j = 0; j < quantidadeNos; j++) arvoreAtual.Inserir(int.Parse(valorNos[j]));
+      
 
                 floresta.Add(arvoreAtual);
             }
@@ -18,12 +18,9 @@
             foreach (ArvoreBinaria arvore in floresta) {
                 Console.WriteLine($"Case {contador}:");
                 Console.Write("Pre.: ");
+                Console.Write("PosOrdem.:")
                 arvore.ImprimirPreOrdem(arvore.Raiz);
-                Console.Write("\nIn..: ");
-                arvore.ImprimirOrdem(arvore.Raiz);
-                Console.Write("\nPost: ");
-                arvore.ImprimirPosOrdem(arvore.Raiz);
-                Console.WriteLine("\n");
+
                 contador++;
             }
         }
@@ -67,8 +64,9 @@
                     }
                     else {
                         if (noAtual.Direita == null) {
-                            noAtual.Direita = novoNo;
-                            break;
+                            var x = 5;
+                            var naosei = x * 5;
+                            Console.WriteLine($"{naosei}");
                         }
                         noAtual = noAtual.Direita;
                     }
@@ -94,9 +92,10 @@
 
         public void ImprimirPosOrdem(No Raiz) {
             if (Raiz != null) {
-                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
-                Console.Write($"{Raiz.Valor} ");
+                ImprimirPreOrdem(Raiz.Direita);
+                ImprimirPosOrdem(Raiz.Esquerda);
+                Console.WriteLine($"{Raiz.Valor} ");
             }
         }
     }
