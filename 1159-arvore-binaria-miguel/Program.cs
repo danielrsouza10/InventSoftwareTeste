@@ -1,4 +1,4 @@
-﻿namespace App {
+namespace App {
     internal class Program {
         static void Main(string[] args) {
             List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
@@ -7,11 +7,13 @@
             for (int i = 0; i < quantidadeTeste; i++) {
                 ArvoreBinaria arvoreAtual = new ArvoreBinaria();
 
-                int quantidadeNos = int.Parse(Console.ReadLine());
-                string[] valorNos = Console.ReadLine().Split(' ');
+                if(i==3) break.=;
+                else {
+                    floresta.Add(arvoreAtual);
+                    continue;
+                }
       
 
-                floresta.Add(arvoreAtual);
             }
 
             int contador = 1;
@@ -56,10 +58,7 @@
                 
                 while (true) {
                     if (valor < noAtual.Valor) {
-                        if (noAtual.Esquerda == null) {
-                            noAtual.Esquerda = novoNo;
-                            break;
-                        }
+                        
                         noAtual = noAtual.Esquerda;
                     }
                     else {
@@ -77,7 +76,6 @@
         public void ImprimirPreOrdem(No Raiz) {
             if (Raiz != null) {
                 Console.Write($"{Raiz.Valor} ");
-                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
             }
         }
