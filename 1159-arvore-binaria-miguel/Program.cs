@@ -9,7 +9,7 @@
 
                 int quantidadeNos = int.Parse(Console.ReadLine());
                 string[] valorNos = Console.ReadLine().Split(' ');
-      
+                for (int j = 0; j < quantidadeNos; j++) arvoreAtual.Inserir(int.Parse(valorNos[j]));
 
                 floresta.Add(arvoreAtual);
             }
@@ -18,9 +18,12 @@
             foreach (ArvoreBinaria arvore in floresta) {
                 Console.WriteLine($"Case {contador}:");
                 Console.Write("Pre.: ");
-                Console.Write("PosOrdem.:")
                 arvore.ImprimirPreOrdem(arvore.Raiz);
-
+                Console.Write("\nIn..: ");
+                arvore.ImprimirOrdem(arvore.Raiz);
+                Console.Write("\nPost: ");
+                arvore.ImprimirPosOrdem(arvore.Raiz);
+                Console.WriteLine("\n");
                 contador++;
             }
         }
@@ -39,19 +42,35 @@
     }
 
     public class ArvoreBinaria {
-        public No? Raiz;
-
-        public ArvoreBinaria() {
-            Raiz = null;
-        }
-
-        public void Inserir(int valor) {
-            No novoNo = new No(valor);
+        string entrada;
+        int[] total;
+        int = 0;
+        if(entrada == "caw caw")
+                {
+                    break;
+                } 
+                else if(entrada == "-*-")
+                {
+                    total[i] += 2;
+                }
+                else if(entrada == "-**")
+                {
+                    total[i] += 3;
+                }
+                else if(entrada == "*--")
+                {
+                    total[i] += 4;
+                }
+                else if(entrada == "*-*")
+                {
+                    total[i] += 5;
+                }
+                else if(entrada == "***")
+                {
+                    total[i] += 7;
+                }
             
-            if (Raiz == null) {
-                Raiz = novoNo;
-            }
-            else {
+            
                 No noAtual = Raiz;
                 
                 while (true) {
@@ -64,9 +83,8 @@
                     }
                     else {
                         if (noAtual.Direita == null) {
-                            var x = 5;
-                            var naosei = x * 5;
-                            Console.WriteLine($"{naosei}");
+                            noAtual.Direita = novoNo;
+                            break;
                         }
                         noAtual = noAtual.Direita;
                     }
@@ -92,10 +110,9 @@
 
         public void ImprimirPosOrdem(No Raiz) {
             if (Raiz != null) {
+                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
-                ImprimirPreOrdem(Raiz.Direita);
-                ImprimirPosOrdem(Raiz.Esquerda);
-                Console.WriteLine($"{Raiz.Valor} ");
+                Console.Write($"{Raiz.Valor} ");
             }
         }
     }
