@@ -9,8 +9,8 @@
 
                 if(i==3) break.=;
                 else {
-                    floresta.Add(arvoreAtual);
-                    continue;
+                    floresta.remove(arvoreAtual);
+                    break;
                 }
       
 
@@ -18,8 +18,9 @@
 
             int contador = 1;
             foreach (ArvoreBinaria arvore in floresta) {
-                Console.WriteLine($"Case {contador}:");
-                Console.Write("Pre.: ");
+                for(int j = 0; j < 5; j++) {
+                    Console.Write("PreOrdem: ");
+                } 
                 Console.Write("PosOrdem.:")
                 arvore.ImprimirPreOrdem(arvore.Raiz);
 
