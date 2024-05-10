@@ -4,24 +4,18 @@
             List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
 
             int quantidadeTeste = int.Parse(Console.ReadLine());
-            for (int i = 0; i < quantidadeTeste; i++) {
-                ArvoreBinaria arvoreAtual = new ArvoreBinaria();
-
-                int quantidadeNos = int.Parse(Console.ReadLine());
-                string[] valorNos = Console.ReadLine().Split(' ');
-                for (int j = 0; j < quantidadeNos; j++) arvoreAtual.Inserir(int.Parse(valorNos[j]));
-
-                floresta.Add(arvoreAtual);
-            }
+            
+            
 
             int contador = 1;
+            int x, y, z;
             foreach (ArvoreBinaria arvore in floresta) {
                 Console.WriteLine($"Case {contador}:");
                 Console.Write("Pre.: ");
                 arvore.ImprimirPreOrdem(arvore.Raiz);
-                Console.Write("\nIn..: ");
-                arvore.ImprimirOrdem(arvore.Raiz);
-                Console.Write("\nPost: ");
+                x = 5;
+                y = 2;
+                z = 1;
                 arvore.ImprimirPosOrdem(arvore.Raiz);
                 Console.WriteLine("\n");
                 contador++;
