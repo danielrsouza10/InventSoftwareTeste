@@ -18,7 +18,7 @@ class URI {
         } 
         for(i=0;i<=2;i++)
         {
-            Console.Write("{0}\n",total[i]);
+            Console.WriteLine("{0}",total[i]);
         }    
     }    
 
@@ -31,15 +31,7 @@ class URI {
                 {
                     break;
                 } 
-                else if(entrada == "-*-")
-                {
-                    total[i] += 2;
-                }
-                else if(entrada == "-**")
-                {
-                    total[i] += 3;
-                }
-                else if(entrada == "*--")
+              else if(entrada == "*--")
                 {
                     total[i] += 4;
                 }
@@ -51,6 +43,15 @@ class URI {
                 {
                     total[i] += 7;
                 }
+                else if(entrada == "-*-")
+                {
+                    total[i] += 2;
+                }
+                else if(entrada == "-**")
+                {
+                    total[i] += 3;
+                }
+                
             
             }
     }
