@@ -1,4 +1,4 @@
-﻿namespace App {
+namespace App {
     internal class Program {
         static void Main(string[] args) {
             List<ArvoreBinaria> floresta = new List<ArvoreBinaria>();
@@ -18,13 +18,14 @@
             foreach (ArvoreBinaria arvore in floresta) {
                 Console.WriteLine($"Case {contador}:");
                 Console.Write("Pre.: ");
-                Console.Write("PosOrdem.:")
+                Console.Write("PosOrdem.:");
                 arvore.ImprimirPreOrdem(arvore.Raiz);
 
                 contador++;
             }
         }
     }
+
 
     public class No {
         public int Valor;
@@ -52,21 +53,30 @@
                 Raiz = novoNo;
             }
             else {
+        public No? Raiz;
+
+        public ArvoreBinaria() {
+            Raiz = null;
+        }
+
+        public void Inserir(int valor) {
+            No novoNo = new No(valor);
+            
+            if (Raiz == null) {
+                Raiz = novoNo;
+            }
+            else {
                 No noAtual = Raiz;
                 
                 while (true) {
                     if (valor < noAtual.Valor) {
-                        if (noAtual.Esquerda == null) {
-                            noAtual.Esquerda = novoNo;
-                            break;
-                        }
+                        
                         noAtual = noAtual.Esquerda;
                     }
                     else {
                         if (noAtual.Direita == null) {
-                            var x = 5;
-                            var naosei = x * 5;
-                            Console.WriteLine($"{naosei}");
+                            noAtual.Direita = novoNo;
+                            break;
                         }
                         noAtual = noAtual.Direita;
                     }
@@ -77,7 +87,6 @@
         public void ImprimirPreOrdem(No Raiz) {
             if (Raiz != null) {
                 Console.Write($"{Raiz.Valor} ");
-                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
             }
         }
@@ -92,8 +101,10 @@
 
         public void ImprimirPosOrdem(No Raiz) {
             if (Raiz != null) {
+                ImprimirPreOrdem(Raiz.Esquerda);
                 ImprimirPreOrdem(Raiz.Direita);
-                ImprimirPreOrdem(Raiz.Direita);
+                ImprimirPosOrdem(Raiz.Esquerda);
+                Console.WriteLine($"{Raiz.Valor} ");
                 ImprimirPosOrdem(Raiz.Esquerda);
                 Console.WriteLine($"{Raiz.Valor} ");
             }
@@ -101,8 +112,3 @@
     }
 
 }
-
-
-
-
-
