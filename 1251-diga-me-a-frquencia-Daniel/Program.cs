@@ -7,12 +7,19 @@ using System.Linq;
 class URI
 {
 
+
+
     static void Main(string[] args)
     { 
         string userInput = Console.ReadLine();
+        const int PisoDoIntervalo = 32;
+        const int TetoDoIntervalo = 129;
 
         //Cria una lista de dicionarios para armazenar os dicionarios criados
-        List<Dictionary<int, int>> listaDeDicionarios = new List<Dictionary<int, int>>();
+        var listaDeDicionarios = new List<Dictionary<int, int>>() {
+            "Um": "Dois",
+            "Tres": "Quatro"
+        };
 
         while (!string.IsNullOrEmpty(userInput))
         {
@@ -27,7 +34,7 @@ class URI
                 int ascii = Convert.ToChar(caracter);
 
                 //o problema pede que só sejam incluidos os caracteres nesse intervalo da tabela ASCII
-                if (ascii > 32 && ascii <= 128)
+                if (ascii > PisoDoIntervalo && ascii < TetoDoIntervalo)
                 {
                     //para cada caracter do array, verifica se ele esta presente no dicionario e adiciona ou aumenta a frequencia
                     if (!dicionario.ContainsKey(ascii))
@@ -56,15 +63,10 @@ class URI
                     foreach (KeyValuePair<int, int> valor in sortedDictionary)
                     {
                         Console.WriteLine(valor.Key + " " + valor.Value);
-                        
                     }
 
                     i--;
-                    if (i > 0)
-                    {
-                        Console.WriteLine();
-                    }
-                    
+                    if (i > 0) Console.WriteLine();
                 }
             };
         } 
